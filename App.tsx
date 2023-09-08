@@ -16,6 +16,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={currentTheme}>
+      <StatusBar />
       <AppContainer>
         <Text>Gym Ranked - The Maromba is coming</Text>
         <StatusBar style="auto" />

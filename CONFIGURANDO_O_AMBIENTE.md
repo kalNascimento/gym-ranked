@@ -49,7 +49,13 @@ git --version
 
 
 
-##### expo-cli
+##### Iniciando um novo projeto
+
+Cria o
+
+```bash
+npx create-expo-app --template
+```
 
 
 
