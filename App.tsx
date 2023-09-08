@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react";
+import { Text} from "react-native";
+import { StatusBar } from "expo-status-bar";
+
+import { ThemeProvider } from "styled-components";
+import styled from "styled-components/native";
+
+import { theme } from "./src/theme/Theme";
 
 export default function App() {
+  const [currentTheme, setCurrentTheme] = useState(theme.light);
+  
+  const toggleTheme = () => {
+    setCurrentTheme(currentTheme === theme.light ? theme.dark : theme.light)
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Gym Ranked - The Maromba is comming</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={currentTheme}>
+      <StatusBar />
+      <AppContainer>
+        <Text>Gym Ranked - The Maromba is coming</Text>
+        <StatusBar style="auto" />
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#865d9b',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const AppContainer = styled.View`
+  flex: 1;
+  background-color: ${({theme}) => theme.colors.background};
+  align-items: center;
+  justify-content: center;
+`
