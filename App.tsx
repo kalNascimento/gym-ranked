@@ -4,7 +4,7 @@ import { SafeAreaView, StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 
 import { theme } from "./src/theme/Theme";
-import { RegisterScreen } from "./src/screens/register";
+import { Register } from "./src/screens/register";
 
 import { Tomorrow_700Bold_Italic, useFonts } from "@expo-google-fonts/tomorrow";
 
@@ -21,7 +21,7 @@ export default function App() {
       <SafeAreaView style={{ flex: 1 }}>
         <StatusBar />
         {
-          fontsLoaded && <RegisterScreen></RegisterScreen>
+          fontsLoaded && <Register></Register>
         }
       </SafeAreaView>
     </ThemeProvider>

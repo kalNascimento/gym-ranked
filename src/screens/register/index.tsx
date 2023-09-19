@@ -10,7 +10,7 @@ import {
 
 const image = require('../../../assets/images/background-image.png');
 
-export const RegisterScreen = () => {
+export const Register = () => {
   return (
     <RegisterView source={image}>
       <LogoView>
