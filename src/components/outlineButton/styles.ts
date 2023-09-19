@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const ButtonView = styled.View`
   background-color: transparent;
   justify-content: center;
-  border: 2px solid ${({ theme }) => theme.colors.white};
+  border: 2px solid ${({ theme }) => theme.colors.border.button};
   border-radius: 8px;
 `
 
@@ -18,5 +18,5 @@ export const ButtonText = styled.Text`
   font-size: ${({ theme }) => theme.size.md};
   line-height: 20px;
   font-weight: ${({ theme }) => theme.weight.bold};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.font.title};
 `

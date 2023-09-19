@@ -7,6 +7,9 @@ export const theme = {
       gray: "#606060",
       white: "#FAFAFA",
       background: "#FAFAFA",
+      border: {
+        button: "#27272C"
+      },
       Feedback: {
         danger: "#CA0000"
       },
@@ -25,6 +28,9 @@ export const theme = {
       gray: "#606060",
       white: "#FAFAFA",
       background: "#27272C",
+      border: {
+        button: "#FAFAFA"
+      },
       Feedback: {
         danger: "#CA0000"
       },

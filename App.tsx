@@ -19,7 +19,7 @@ export default function App() {
       <StatusBar />
       <AppContainer>
         <AppText>Gym Ranked - The Maromba is coming</AppText>
-        <OutlineButton onPress={() => console.log('biiir')}  style={{width: '100%'}}>
+        <OutlineButton onPress={() => toggleTheme()}  style={{width: '100%'}}>
           ser maromba
         </OutlineButton>
         <StatusBar style="auto" />
@@ -30,13 +30,13 @@ export default function App() {
 
 const AppContainer = styled.View`
   flex: 1;
-  background-color: ${({theme}) => theme.colors.secondary};
+  background-color: ${({theme}) => theme.colors.background};
   align-items: center;
   justify-content: center;
   padding: 16px;
 `
 
 const AppText = styled.Text`
-  color: ${({theme}) => theme.colors.primary};
+  color: ${({theme}) => theme.colors.font.title};
   padding: 16px;
 `
