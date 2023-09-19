@@ -8,7 +8,7 @@ export const theme = {
       white: "#FAFAFA",
       background: "#FAFAFA",
       Feedback: {
-        danger: "#CA0000"
+        danger: "#D32020"
       },
       font: {
         title: "#202020",
@@ -26,7 +26,7 @@ export const theme = {
       white: "#FAFAFA",
       background: "#27272C",
       Feedback: {
-        danger: "#CA0000"
+        danger: "#ED5F5F"
       },
       font: {
         title: "#FAFAFA",
