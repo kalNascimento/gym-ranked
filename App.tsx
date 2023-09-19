@@ -1,33 +1,29 @@
 import { useState } from "react";
-import { Text} from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, StatusBar } from "react-native";
 
 import { ThemeProvider } from "styled-components";
-import styled from "styled-components/native";
 
 import { theme } from "./src/theme/Theme";
+import { RegisterScreen } from "./src/screens/register";
+
+import { Tomorrow_700Bold_Italic, useFonts } from "@expo-google-fonts/tomorrow";
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState(theme.light);
-  
+  const [fontsLoaded] = useFonts({ Tomorrow_700Bold_Italic });
+
   const toggleTheme = () => {
     setCurrentTheme(currentTheme === theme.light ? theme.dark : theme.light)
   };
 
   return (
-    <ThemeProvider theme={currentTheme}>
-      <StatusBar />
-      <AppContainer>
-        <Text>Gym Ranked - The Maromba is coming</Text>
-        <StatusBar style="auto" />
-      </AppContainer>
+    <ThemeProvider theme={Object.assign(currentTheme, theme.typography)}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar />
+        {
+          fontsLoaded && <RegisterScreen></RegisterScreen>
+        }
+      </SafeAreaView>
     </ThemeProvider>
   );
 }
-
-const AppContainer = styled.View`
-  flex: 1;
-  background-color: ${({theme}) => theme.colors.background};
-  align-items: center;
-  justify-content: center;
-`
