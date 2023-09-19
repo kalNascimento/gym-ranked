@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Text} from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import { ThemeProvider } from "styled-components";
 import styled from "styled-components/native";
+import { ThemeProvider } from "styled-components";
 
+import { OutlineButton } from "./src/components/outlineButton";
 import { theme } from "./src/theme/Theme";
 
 export default function App() {
@@ -15,10 +15,13 @@ export default function App() {
   };
 
   return (
-    <ThemeProvider theme={currentTheme}>
+    <ThemeProvider theme={Object.assign(currentTheme, theme.font)}>
       <StatusBar />
       <AppContainer>
-        <Text>Gym Ranked - The Maromba is coming</Text>
+        <AppText>Gym Ranked - The Maromba is coming</AppText>
+        <OutlineButton onPress={() => console.log('biiir')}  style={{width: '100%'}}>
+          ser maromba
+        </OutlineButton>
         <StatusBar style="auto" />
       </AppContainer>
     </ThemeProvider>
@@ -27,7 +30,13 @@ export default function App() {
 
 const AppContainer = styled.View`
   flex: 1;
-  background-color: ${({theme}) => theme.colors.background};
+  background-color: ${({theme}) => theme.colors.secondary};
   align-items: center;
   justify-content: center;
+  padding: 16px;
+`
+
+const AppText = styled.Text`
+  color: ${({theme}) => theme.colors.primary};
+  padding: 16px;
 `

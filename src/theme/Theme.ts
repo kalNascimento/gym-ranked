@@ -34,5 +34,13 @@ export const theme = {
         placeholder: "#606060"
       }
     }
+  },
+  font: {
+    size: {
+      md: '16px'
+    },
+    weight: {
+      bold: 700
+    }
   }
 }
