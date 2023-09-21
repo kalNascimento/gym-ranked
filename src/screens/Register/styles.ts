@@ -2,7 +2,8 @@ import styled from "styled-components/native";
 
 export const RegisterView = styled.ImageBackground`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.black};
+  padding: 16px;
 `;
 
 export const LogoView = styled.View`

@@ -7,6 +7,9 @@ export const theme = {
       gray: "#606060",
       white: "#FAFAFA",
       background: "#FAFAFA",
+      border: {
+        button: "#27272C"
+      },
       Feedback: {
         danger: "#D32020"
       },
@@ -25,6 +28,9 @@ export const theme = {
       gray: "#606060",
       white: "#FAFAFA",
       background: "#27272C",
+      border: {
+        button: "#FAFAFA"
+      },
       Feedback: {
         danger: "#ED5F5F"
       },
@@ -41,7 +47,11 @@ export const theme = {
     },
     fontSize: {
       sm: '14px',
+      md: '16px',
       lg: '32px'
+    },
+    fontWeight: {
+      bold: 700
     }
   }
 }

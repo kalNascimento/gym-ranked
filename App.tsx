@@ -3,8 +3,8 @@ import { SafeAreaView, StatusBar } from "react-native";
 
 import { ThemeProvider } from "styled-components";
 
+import { Register } from "./src/screens/Register";
 import { theme } from "./src/theme/Theme";
-import { Register } from "./src/screens/register";
 
 import { Tomorrow_700Bold_Italic, useFonts } from "@expo-google-fonts/tomorrow";
 
