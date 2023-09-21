@@ -2,10 +2,10 @@ import { PropsWithChildren } from "react";
 import { TouchableHighlight } from "react-native";
 import { OutlineButtonProps } from "../types";
 import { theme } from "../../theme/Theme";
-import { 
-  ButtonView, 
-  ButtonContentView, 
-  ButtonText 
+import {
+  ButtonView,
+  ButtonContentView,
+  ButtonText
 } from "./styles";
 
 export const OutlineButton = ({

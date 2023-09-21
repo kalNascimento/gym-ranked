@@ -1,42 +1,29 @@
 import { useState } from "react";
-import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, StatusBar } from "react-native";
 
-import styled from "styled-components/native";
 import { ThemeProvider } from "styled-components";
 
-import { OutlineButton } from "./src/components/outlineButton";
+import { Register } from "./src/screens/Register";
 import { theme } from "./src/theme/Theme";
+
+import { Tomorrow_700Bold_Italic, useFonts } from "@expo-google-fonts/tomorrow";
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState(theme.light);
-  
+  const [fontsLoaded] = useFonts({ Tomorrow_700Bold_Italic });
+
   const toggleTheme = () => {
-    setCurrentTheme(currentTheme === theme.light ? theme.dark : theme.light)
+    setCurrentTheme(currentTheme === theme.light ? theme.dark : theme.light);
   };
 
   return (
-    <ThemeProvider theme={Object.assign(currentTheme, theme.font)}>
-      <StatusBar />
-      <AppContainer>
-        <AppText>Gym Ranked - The Maromba is coming</AppText>
-        <OutlineButton onPress={() => toggleTheme()}  style={{width: '100%'}}>
-          ser maromba
-        </OutlineButton>
-        <StatusBar style="auto" />
-      </AppContainer>
+    <ThemeProvider theme={Object.assign(currentTheme, theme.typography)}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar />
+        {
+          fontsLoaded && <Register></Register>
+        }
+      </SafeAreaView>
     </ThemeProvider>
   );
-}
-
-const AppContainer = styled.View`
-  flex: 1;
-  background-color: ${({theme}) => theme.colors.background};
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-`
-
-const AppText = styled.Text`
-  color: ${({theme}) => theme.colors.font.title};
-  padding: 16px;
-`
+};

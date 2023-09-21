@@ -15,8 +15,8 @@ export const ButtonContentView = styled.View`
 export const ButtonText = styled.Text`
   text-transform: uppercase;
   align-items: center;
-  font-size: ${({ theme }) => theme.size.md};
+  font-size: ${({ theme }) => theme.fontSize.md};
   line-height: 20px;
-  font-weight: ${({ theme }) => theme.weight.bold};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.colors.font.title};
 `
