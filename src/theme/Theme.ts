@@ -41,11 +41,16 @@ export const theme = {
       }
     }
   },
-  font: {
-    size: {
-      md: '16px'
+  typography: {
+    fontFamily: {
+      tomorrow: 'Tomorrow_700Bold_Italic',
     },
-    weight: {
+    fontSize: {
+      sm: '14px',
+      md: '16px',
+      lg: '32px'
+    },
+    fontWeight: {
       bold: 700
     }
   }
