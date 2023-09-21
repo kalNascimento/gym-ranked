@@ -6,13 +6,13 @@ import {
   LogoText, 
   AnchorText, 
   NormalText
-} from "./styles"
+} from "./styles";
 
-const image = require('../../../assets/images/background-image.png');
+import background from '../../../assets/images/background-image.png';
 
 export const Register = () => {
   return (
-    <RegisterView source={image}>
+    <RegisterView source={background}>
       <LogoView>
         <LogoText>cadastrar</LogoText>
       </LogoView>
@@ -22,4 +22,4 @@ export const Register = () => {
       </AnchorView>
     </RegisterView>
   )
-}
+};

@@ -13,7 +13,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({ Tomorrow_700Bold_Italic });
 
   const toggleTheme = () => {
-    setCurrentTheme(currentTheme === theme.light ? theme.dark : theme.light)
+    setCurrentTheme(currentTheme === theme.light ? theme.dark : theme.light);
   };
 
   return (
@@ -26,4 +26,4 @@ export default function App() {
       </SafeAreaView>
     </ThemeProvider>
   );
-}
+};

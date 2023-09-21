@@ -29,10 +29,10 @@ export const AnchorView = styled.View`
 `;
 
 export const NormalText = styled.Text`
-font-size: ${({ theme }) => theme.fontSize.sm};
-color: ${({ theme }) => theme.colors.white};
-`
+  font-size: ${({ theme }) => theme.fontSize.sm};
+  color: ${({ theme }) => theme.colors.white};
+`;
 
 export const AnchorText = styled.Text`
   text-decoration: underline;
-`
+`;
