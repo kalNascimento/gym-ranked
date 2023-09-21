@@ -34,5 +34,14 @@ export const theme = {
         placeholder: "#606060"
       }
     }
+  },
+  typography: {
+    fontFamily: {
+      tomorrow: 'Tomorrow_700Bold_Italic',
+    },
+    fontSize: {
+      sm: '14px',
+      lg: '32px'
+    }
   }
 }
