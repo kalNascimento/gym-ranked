@@ -1,45 +1,45 @@
 export const theme = {
   light: {
     colors: {
-      primary: "#FFF966",
-      secondary: "#0C0D12",
-      black: "#0C0D12",
-      gray: "#606060",
-      white: "#FAFAFA",
-      background: "#FAFAFA",
+      primary: '#FFF966',
+      secondary: '#0C0D12',
+      black: '#0C0D12',
+      gray: '#606060',
+      white: '#FAFAFA',
+      background: '#FAFAFA',
       border: {
-        button: "#27272C"
+        button: '#27272C',
       },
       Feedback: {
-        danger: "#D32020"
+        danger: '#D32020',
       },
       font: {
-        title: "#202020",
-        text: "#3B3B3B",
-        placeholder: "#606060"
-      }
-    }
+        title: '#202020',
+        text: '#3B3B3B',
+        placeholder: '#606060',
+      },
+    },
   },
   dark: {
     colors: {
-      primary: "#FFF966",
-      secondary: "#D3D3D3",
-      black: "#0C0D12",
-      gray: "#606060",
-      white: "#FAFAFA",
-      background: "#27272C",
+      primary: '#FFF966',
+      secondary: '#D3D3D3',
+      black: '#0C0D12',
+      gray: '#606060',
+      white: '#FAFAFA',
+      background: '#27272C',
       border: {
-        button: "#FAFAFA"
+        button: '#FAFAFA',
       },
       Feedback: {
-        danger: "#ED5F5F"
+        danger: '#ED5F5F',
       },
       font: {
-        title: "#FAFAFA",
-        text: "#FAFAFA",
-        placeholder: "#606060"
-      }
-    }
+        title: '#FAFAFA',
+        text: '#FAFAFA',
+        placeholder: '#606060',
+      },
+    },
   },
   typography: {
     fontFamily: {
@@ -48,10 +48,10 @@ export const theme = {
     fontSize: {
       sm: '14px',
       md: '16px',
-      lg: '32px'
+      lg: '32px',
     },
     fontWeight: {
-      bold: 700
-    }
-  }
-}
+      bold: 700,
+    },
+  },
+};
