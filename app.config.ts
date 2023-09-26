@@ -1,4 +1,8 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
+import * as dotenv from 'dotenv';
+
+const { parsed } = dotenv.config()
+const env = parsed
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
@@ -12,7 +16,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   orientation: 'portrait',
   extra: {
     eas: {
-      projectId: "3fd6cfa3-bcd5-4551-90f2-31742b930548"
+      projectId: env?.EXPO_PROJECT_ID
     }
   }
 });
