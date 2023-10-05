@@ -10,7 +10,7 @@ export const theme = {
       border: {
         button: '#27272C',
       },
-      Feedback: {
+      feedback: {
         danger: '#D32020',
       },
       font: {
@@ -46,11 +46,13 @@ export const theme = {
       tomorrow: 'Tomorrow_700Bold_Italic',
     },
     fontSize: {
+      xs: '12px',
       sm: '14px',
       md: '16px',
       lg: '32px',
     },
     fontWeight: {
+      regular: 400,
       bold: 700,
     },
   },

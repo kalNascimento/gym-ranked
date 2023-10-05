@@ -6,10 +6,11 @@ export interface CustomTextProps extends TextProps {
   fontColor?: string;
   fontSize?: FontSize;
   fontWeight?: FontWeight;
-  italic?: boolean;
+  textAlign?: string;
 }
 
 export enum FontSize {
+  XS = 'xs',
   SM = 'sm',
   MD = 'md',
   LG = 'lg',
