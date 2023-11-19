@@ -1,27 +1,27 @@
-import {
-  RegisterView,
-  LogoView,
-  FormView,
-  AnchorView,
-  LogoText,
-  AnchorText,
-  NormalText,
-} from './styles';
-
-import background from '../../../assets/images/background-image.png';
-import { OutlineButton } from '../../components/OutlineButton';
+import { useForm } from 'react-hook-form';
 import { ThemeProvider } from 'styled-components';
+import background from '../../../assets/images/background-image.png';
+import { confirmPasswordRules, emailRules, passwordRules } from '../../common/utils/form.utils';
+import { CustomTextInput } from '../../components/CustomTextInput';
+import { OutlineButton } from '../../components/OutlineButton';
 import { theme } from '../../theme/Theme';
-import { TextField } from '../../components/TextField';
-import { Controller, useForm } from 'react-hook-form';
+import {
+  AnchorText,
+  AnchorView,
+  FormView,
+  LogoText,
+  LogoView,
+  NormalText,
+  RegisterView,
+} from './styles';
 
 export const Register = () => {
   const { control, getValues, handleSubmit, watch } = useForm({
     defaultValues: { email: '', password: '', confirmPassword: '' },
   });
 
-  const isSamePassword = (value: string) => {
-    return watch('password') === value;
+  const isSamePassword = () => {
+    return watch('password') === watch('confirmPassword');
   };
 
   const onSubmit = () => {
@@ -36,74 +36,36 @@ export const Register = () => {
           <LogoText>cadastrar</LogoText>
         </LogoView>
         <FormView>
-          <Controller
+          <CustomTextInput
+            label={'E-mail'}
+            control={control}
+            placeholder="exemplo@exemplo.com.br"
             name={'email'}
-            control={control}
-            rules={{
-              required: 'E-mail deve ser preenchido',
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: 'Digite um formato de e-mail válido',
-              },
-            }}
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                id="email"
-                label="E-mail"
-                placeholder="exemplo@exemplo.com.br"
-                errorMessage={error?.message}
-                value={value}
-                onChangeText={onChange}
-              />
-            )}
+            type="email"
+            rules={emailRules}
           />
-
-          <Controller
+          <CustomTextInput
+            label={'Senha'}
+            control={control}
+            placeholder="******"
             name={'password'}
+            type="password"
+            rules={passwordRules}
+          />
+          <CustomTextInput
+            label="Confirmar senha"
             control={control}
+            placeholder="******"
+            type="password"
+            name="confirmPassword"
             rules={{
-              required: 'Senha deve ser preenchido',
-              minLength: {
-                value: 8,
-                message: 'Senha deve ter no mínimo 8 caracteres',
-              },
-              pattern: {
-                value: /^(?=.*[A-Za-z])(?=.*\d).+/,
-                message: 'Senha deve conter letras e números',
+              ...confirmPasswordRules,
+              validate: {
+                check: () => isSamePassword() || 'Senha e confirmar senha devem ser iguais',
               },
             }}
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                label="Senha"
-                isPassword
-                errorMessage={error?.message}
-                value={value}
-                onChangeText={onChange}
-              />
-            )}
           />
 
-          <Controller
-            name={'confirmPassword'}
-            control={control}
-            rules={{
-              required: 'Confirmar senha deve ser preenchido',
-              validate: {
-                check: (value) =>
-                  isSamePassword(value) || 'Senha e confirmar senha devem ser iguais',
-              },
-            }}
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                label="Confirmar senha"
-                isPassword
-                errorMessage={error?.message}
-                value={value}
-                onChangeText={onChange}
-                textContentType="password"
-              />
-            )}
-          />
           <OutlineButton onPress={handleSubmit(onSubmit)}>cadastrar</OutlineButton>
         </FormView>
         <AnchorView>
