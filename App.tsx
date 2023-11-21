@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { SafeAreaView, StatusBar } from "react-native";
+import { useState } from 'react';
+import { SafeAreaView, StatusBar, Text } from 'react-native';
 
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from 'styled-components';
 
-import { Register } from "./src/screens/Register";
-import { theme } from "./src/theme/Theme";
+import { Register } from './src/screens/Register';
+import { theme } from './src/theme/Theme';
 
-import { Tomorrow_700Bold_Italic, useFonts } from "@expo-google-fonts/tomorrow";
+import { Tomorrow_700Bold_Italic, useFonts } from '@expo-google-fonts/tomorrow';
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState(theme.light);
@@ -20,10 +20,8 @@ export default function App() {
     <ThemeProvider theme={Object.assign(currentTheme, theme.typography)}>
       <SafeAreaView style={{ flex: 1 }}>
         <StatusBar />
-        {
-          fontsLoaded && <Register></Register>
-        }
+        {fontsLoaded && <Register></Register>}
       </SafeAreaView>
     </ThemeProvider>
   );
-};
+}

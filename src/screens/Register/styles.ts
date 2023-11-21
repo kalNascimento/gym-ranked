@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const RegisterView = styled.ImageBackground`
   flex: 1;
@@ -21,6 +21,7 @@ export const LogoText = styled.Text`
 
 export const FormView = styled.View`
   flex: 6;
+  gap: 16px;
 `;
 
 export const AnchorView = styled.View`
